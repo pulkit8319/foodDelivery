@@ -42,8 +42,8 @@ public class DeliveryServiceImpl implements DeliveryService {
 	 */
 	@Override
 	public Queue<DeliveryPerson> getBusyDeliveryPersons() {
-		//return busyDeliveryPersons;
-		return null;
+		return busyDeliveryPersons;
+		//return null;
 	}
 
 	/* (non-Javadoc)

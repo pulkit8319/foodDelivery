@@ -39,15 +39,10 @@ public class OrderServiceImpl implements OrderService {
 		DeliveryPerson deliveryPerson;
 		try {
 			deliveryPerson = deliveryService.getFirstAvailableDeliveryPerson();
-
 			deliveryPerson.setOrder(order);
-
 			order.setOrderStatus(OrderStatus.IN_PROCESS);
-
 			orderMap.put(order.getOrderId(), order);
-
 			deliveryService.getBusyDeliveryPersons().add(deliveryPerson);
-			
 		} catch (NotAcceptingOrdersException e) {
 			order.setOrderStatus(OrderStatus.CURRENTLY_NOT_ACCEPTING);
 		}
